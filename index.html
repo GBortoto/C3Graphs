@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8"/>
+	<head>
+		<title>Gráficos para Economia</title>
+		<link rel='stylesheet' href='stylesheets/style.css' />
+		<link rel='stylesheet' href='stylesheets/bootstrap.min.css' />
+		<link rel='stylesheet' href='stylesheets/font-awesome.min.css' />
+
+		<!-- Load c3.css -->
+		<link href="stylesheets/c3.css" rel="stylesheet" type="text/css">
+
+		<!-- Load d3.js and c3.js -->
+		<script src="javascripts/d3.v3.min.js" charset="utf-8"></script>
+		<script src="javascripts/c3.min.js"></script>
+
+		<!-- Load JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Load Animate.css -->
+		<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+  	</head>
+  	<body class="body">
+			<div class="container">
+				<!-- Gráfico: PIBs Nominais x PIBs Reais -->
+				<div class="animated slideInLeft">
+					<div class="col-sm-6">
+						<div id="GraficoNominalXReal"></div>
+					</div>
+				</div>
+				
+				<!-- Gráfico: Deflator do PIB -->
+				<div class="animated slideInRight">
+					<div class="col-sm-6">
+						<div id="GraficoDeflatores"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<!--div class="animated bounce"-->
+					<div class="col-sm-12">
+						<div class="well well-lg" id="MessageWell">
+							<p id="Message"></p>
+						</div>
+					</div>
+				<!--/div-->
+					
+				</div>
+
+			<!-- Menu de input -->
+			<div class="container">
+					<div class="col-sm-2">
+							<div class="form-group">
+									<label for="PIBNominalInput">PIB Nominal</label>
+									<input type="text" class="form-control" id="PIBNominalInput">
+							</div>
+					</div>
+					<div class="col-sm-2">
+							<div class="form-group">
+									<label for="PIBRealInput">PIB Real</label>
+									<input type="text" class="form-control" id="PIBRealInput">
+							</div>
+					</div>
+			</div>
+			<div class="container">
+				<div class="col-sm-12">
+					<button type="button" class="btn btn-primary" id="AddButton" onclick="addNewPosition(Number(document.getElementById('PIBNominalInput').value), Number(document.getElementById('PIBRealInput').value), true)">Add</button>
+					<button type="button" class="btn btn-danger" id="RemoveButton" onclick="removeAll()">Clear</button>
+					<button type="button" class="btn btn-sucess" id="ExampleButton" onclick="makeExample()">Example</button>
+				</div>
+    		</div>
+		<script src="javascripts/create-graph.js"></script>
+  	</body>
+</html>
